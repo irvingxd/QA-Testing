@@ -23,7 +23,7 @@ test.beforeEach(async ({ page }) => {
     await passwordInput.fill('shiveris');
     const loginButton = page.getByRole('button', { name: 'Login' });
     await loginButton.click();
-    await expect(page).toHaveURL('https://panel.irvingpoop.cloud');
+    await expect(page).toHaveURL('https://panel.irvingpoop.cloud/');
     await page.getByRole('link').nth(2).click();
 });
 
