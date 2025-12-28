@@ -1,9 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { StartServerPage } from '../pages/StartServer';
-import { start } from 'node:repl';
-import { kill } from 'node:process';
-import { get } from 'node:http';
 
 let loginPage: LoginPage;
 let startServerPage: StartServerPage;
