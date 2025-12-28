@@ -13,9 +13,9 @@ test('Verify Landing Page Title and URL', async ({ page }) => {
 
 test('ReCAPTCHA verification', async ({ page }) => {
     const usernameInput = page.locator('input[name="username"]');
-    await usernameInput.fill('Shiveris');
+    await usernameInput.fill('xxx');
     const passwordInput = page.locator('input[name="password"]');
-    await passwordInput.fill('shiveris');
+    await passwordInput.fill('xxx');
     const loginButton = page.getByRole('button', { name: 'Login' });  
     await loginButton.click();
     const recaptcha = page.locator('iframe[title="reCAPTCHA"]');

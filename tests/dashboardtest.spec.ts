@@ -10,7 +10,10 @@ test('Dashboard Navigation Test', async ({ page }) => {
   dashboardPage = new DashboardPage(page);
 
     await loginPage.goto();
-    await loginPage.login('Shiveris', 'shiveris');
+    await loginPage.login(
+        process.env.LOGIN_USERNAME!,
+        process.env.LOGIN_PASSWORD!
+    ); 
     await expect(page).toHaveURL('https://panel.irvingpoop.cloud');
 
 

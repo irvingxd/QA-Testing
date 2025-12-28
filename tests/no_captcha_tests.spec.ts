@@ -4,9 +4,9 @@ test.beforeAll(async ({ page }) => {
   // Navigate to the login page before all tests
     await page.goto('https://panel.irvingpoop.cloud/auth/login');
     const usernameInput = page.locator('input[name="username"]');
-    await usernameInput.fill('Shiveris');
+    await usernameInput.fill('xx');
     const passwordInput = page.locator('input[name="password"]');
-    await passwordInput.fill('shiveris');
+    await passwordInput.fill('xx');
     const loginButton = page.getByRole('button', { name: 'Login' });
     await loginButton.click();
     await expect(page).toHaveURL('https://panel.irvingpoop.cloud');
@@ -18,9 +18,9 @@ test.beforeEach(async ({ page }) => {
    // Navigate to the login page before each test
     await page.goto('https://panel.irvingpoop.cloud/auth/login');
     const usernameInput = page.locator('input[name="username"]');
-    await usernameInput.fill('Shiveris');
+    await usernameInput.fill('xx');
     const passwordInput = page.locator('input[name="password"]');
-    await passwordInput.fill('shiveris');
+    await passwordInput.fill('xx');
     const loginButton = page.getByRole('button', { name: 'Login' });
     await loginButton.click();
     await expect(page).toHaveURL('https://panel.irvingpoop.cloud');
