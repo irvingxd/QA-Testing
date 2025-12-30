@@ -40,7 +40,6 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
 projects: [
-    // 1. The Setup Project
     { 
       name: 'setup', 
       testMatch: /.*\.setup\.ts/ 
@@ -50,10 +49,8 @@ projects: [
       name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        // storageState must be INSIDE 'use'
         storageState: '.auth/user.json', 
       },
-      // dependencies must be INSIDE the project object
       dependencies: ['setup'], 
     },
 

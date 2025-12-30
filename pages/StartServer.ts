@@ -9,6 +9,6 @@ export class StartServerPage {
 async navigateToServers() {
     const serverLink = this.page.locator('a[href*="98ccf40f"]');
     await serverLink.waitFor({ state: 'visible', timeout: 10000 });
-    await serverLink.click({force: true});
+    await serverLink.click();
 }
 }
