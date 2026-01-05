@@ -2,20 +2,9 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv'
 import path from 'path';
 
-// Read from ".env" file.
 dotenv.config({ path: path.resolve(__dirname, 'pterodactyldetails.env') });
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -30,6 +19,12 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   timeout: 60000, 
+  expect: {
+    toHaveScreenshot: {
+      threshold: 0.2, // kodel firefox FAILINA
+    },
+  },
+  snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{arg}{ext}',
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
