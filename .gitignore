@@ -8,4 +8,4 @@ node_modules/
 /playwright/.auth/
 /pterodactyldetails.env
 .auth/
-/tsconfig.json
+tsconfig.json
