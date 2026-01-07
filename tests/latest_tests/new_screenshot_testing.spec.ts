@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { DashboardPage } from '../pages/Dashboard';
-import { StartServerPage } from '../pages/StartServer';
+import { LoginPage } from '../../pages/LoginPage';
+import { DashboardPage } from '../../pages/Dashboard';
+import { StartServerPage } from '../../pages/StartServer';
 
 test.use({ storageState: '.auth/user.json' });
 let loginPage: LoginPage;

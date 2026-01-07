@@ -1,6 +1,6 @@
 import      { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { DashboardPage } from '../pages/Dashboard';
+import { LoginPage } from '../../pages/LoginPage';
+import { DashboardPage } from '../../pages/Dashboard';
 
 let loginPage: LoginPage;
 let dashboardPage: DashboardPage;

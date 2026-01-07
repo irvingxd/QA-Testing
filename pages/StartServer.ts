@@ -1,16 +1,19 @@
-import { type Locator , type Page, expect} from "@playwright/test";
+import { type Locator, type Page } from "@playwright/test";
 
 export class StartServerPage {
   readonly page: Page;
   readonly serverIP: Locator;
+  readonly addressLabel: Locator;
 
-    constructor(page: Page) {
+  constructor(page: Page) {
     this.page = page;
-    this.serverIP = page.locator('div').filter({ hasText: /^(\d{1,3}\.){3}\d{1,3}:\d+$/ }).first(); 
-   }
-async navigateToServers() {
-    const serverLink = this.page.locator('a[href*="98ccf40f"]');
-    await serverLink.waitFor({ state: 'visible', timeout: 10000 });
+    this.addressLabel = page.locator('div.flex-col').filter({ has: page.locator('p', { hasText: /^Address$/ }) });
+    this.serverIP = this.addressLabel.locator('div.font-semibold');
+  }
+
+  async navigateToServers(serverId: string) {
+    const serverLink = this.page.locator(`a[href*="${serverId}"]`);
+    await serverLink.waitFor({ state: 'visible' });
     await serverLink.click();
-}
+  }
 }
